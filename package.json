@@ -2,10 +2,9 @@
   "name": "pm-portfolio",
   "version": "1.0.0",
   "description": "A personal portfolio website built from scratch to showcase my work as a Product Manager.",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "dev": "vercel dev",
+    "build": "echo 'No build required'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/norbertsamu/pm-portfolio/issues"
   },
-  "homepage": "https://github.com/norbertsamu/pm-portfolio#readme",
-  "dependencies": {
-    "express": "^5.2.1"
-  }
+  "homepage": "https://github.com/norbertsamu/pm-portfolio#readme"
 }

@@ -1,21 +1,22 @@
 # PM Portfolio
 
-A personal portfolio website with a Node.js/Express backend.
+A personal portfolio website with Vercel serverless API functions.
 
 ## Tech Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (vanilla)
-- **Backend**: Node.js, Express.js
+- **Backend**: Vercel Serverless Functions
 - **Data**: JSON files
+- **Hosting**: Vercel (free tier)
 
 ## Getting Started
 
 ```bash
-# Install dependencies
-npm install
+# Install Vercel CLI (if not already)
+npm i -g vercel
 
-# Start the server
-npm start
+# Run locally
+vercel dev
 ```
 
 Then open http://localhost:3000
@@ -24,18 +25,23 @@ Then open http://localhost:3000
 
 ```
 pm-portfolio/
-├── server.js           # Express server with API routes
-├── package.json        # Node.js dependencies
-├── public/             # Frontend files (served statically)
+├── api/                  # Serverless API functions
+│   ├── profile.js        # GET /api/profile
+│   ├── health.js         # GET /api/health
+│   └── companies/
+│       ├── index.js      # GET /api/companies
+│       └── [id].js       # GET /api/companies/:id
+├── public/               # Frontend files (served statically)
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
-├── data/               # JSON data files
-│   ├── profile.json    # Your profile info
-│   └── companies.json  # Company/experience data
-└── images/             # Uploaded images
-    ├── profile/        # Your photo
-    └── logos/          # Company logos
+├── data/                 # JSON data files
+│   ├── profile.json      # Your profile info
+│   └── companies.json    # Company/experience data
+├── images/               # Static images
+│   ├── profile/          # Your photo
+│   └── logos/            # Company logos
+└── vercel.json           # Vercel configuration
 ```
 
 ## API Endpoints
@@ -55,4 +61,8 @@ pm-portfolio/
 
 ## Deployment
 
-The backend requires a Node.js hosting platform (Vercel, Railway, Render, etc.)
+Push to GitHub - Vercel auto-deploys from main branch.
+
+```bash
+git push origin main
+```
