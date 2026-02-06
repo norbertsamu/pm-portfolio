@@ -1,0 +1,10 @@
+{
+    "buildCommand": "",
+    "outputDirectory": "public",
+    "rewrites": [
+        { "source": "/api/profile", "destination": "/api/profile" },
+        { "source": "/api/companies", "destination": "/api/companies/index" },
+        { "source": "/api/companies/:id", "destination": "/api/companies/[id]" },
+        { "source": "/api/health", "destination": "/api/health" }
+    ]
+}
