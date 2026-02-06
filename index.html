@@ -3,64 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PM Portfolio</title>
+    <title>Norbi Samu | Product Manager</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-brand">Your Name</div>
+        <div class="nav-brand">Norbi Samu</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
-        <p>Product Manager passionate about building great user experiences</p>
+        <div class="hero-content">
+            <p class="hero-subtitle">Product Manager</p>
+            <h1>Norbi Samu</h1>
+            <p class="hero-description">Building products that solve real problems. Experienced in B2B SaaS, HR Tech, and PropTech.</p>
+            <a href="#experience" class="hero-cta">View My Work</a>
+        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>Write a brief introduction about yourself here. What drives you? What kind of products do you love working on?</p>
+    <section id="about" class="section about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <div class="image-placeholder">
+                    <!-- Replace with your image: <img src="your-photo.jpg" alt="Norbi Samu"> -->
+                    <span>Your Photo</span>
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p class="about-text">
+                    I'm a Product Manager with experience across HR Tech, PropTech, and talent management platforms.
+                    I've worked with companies ranging from early-stage startups to scale-ups, helping them define product strategy,
+                    ship features that users love, and drive measurable business outcomes.
+                </p>
+                <p class="about-text">
+                    My approach combines deep user empathy with data-driven decision making. I believe great products
+                    come from truly understanding customer problems before jumping to solutions.
+                </p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Companies</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">B2B</span>
+                        <span class="stat-label">Focus</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">SaaS</span>
+                        <span class="stat-label">Expertise</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Project One</h3>
-                <p>Brief description of a product or project you worked on.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <h2>Experience</h2>
+        <p class="section-subtitle">Companies where I've driven product impact</p>
+
+        <div class="experience-tabs">
+            <button class="tab-btn active" data-tab="beamery">Beamery</button>
+            <button class="tab-btn" data-tab="fixflo">Fixflo</button>
+            <button class="tab-btn" data-tab="spottedzebra">Spotted Zebra</button>
+            <button class="tab-btn" data-tab="project4">Project 4</button>
+            <button class="tab-btn" data-tab="project5">Project 5</button>
+        </div>
+
+        <div class="experience-content">
+            <!-- Beamery -->
+            <div class="experience-card active" id="beamery">
+                <div class="company-header">
+                    <img src="https://logo.clearbit.com/beamery.com" alt="Beamery Logo" class="company-logo">
+                    <div class="company-info">
+                        <h3>Beamery</h3>
+                        <span class="company-type">Talent Lifecycle Management</span>
+                    </div>
+                </div>
+                <p class="experience-description">
+                    Beamery is a talent lifecycle management platform that helps enterprises attract, engage, and retain top talent.
+                    Add your role description, key achievements, and impact here.
+                </p>
+                <ul class="experience-highlights">
+                    <li>Key achievement or responsibility</li>
+                    <li>Another key achievement</li>
+                    <li>Measurable impact you delivered</li>
+                </ul>
             </div>
-            <div class="project-card">
-                <h3>Project Two</h3>
-                <p>Brief description of another product or project.</p>
+
+            <!-- Fixflo -->
+            <div class="experience-card" id="fixflo">
+                <div class="company-header">
+                    <img src="https://logo.clearbit.com/fixflo.com" alt="Fixflo Logo" class="company-logo">
+                    <div class="company-info">
+                        <h3>Fixflo</h3>
+                        <span class="company-type">Property Management Software</span>
+                    </div>
+                </div>
+                <p class="experience-description">
+                    Fixflo is a repairs and maintenance management platform for property managers.
+                    Add your role description, key achievements, and impact here.
+                </p>
+                <ul class="experience-highlights">
+                    <li>Key achievement or responsibility</li>
+                    <li>Another key achievement</li>
+                    <li>Measurable impact you delivered</li>
+                </ul>
             </div>
-            <div class="project-card">
-                <h3>Project Three</h3>
-                <p>Brief description of a third project.</p>
+
+            <!-- Spotted Zebra -->
+            <div class="experience-card" id="spottedzebra">
+                <div class="company-header">
+                    <img src="https://logo.clearbit.com/spottedzebra.co.uk" alt="Spotted Zebra Logo" class="company-logo">
+                    <div class="company-info">
+                        <h3>Spotted Zebra</h3>
+                        <span class="company-type">Skills Assessment Platform</span>
+                    </div>
+                </div>
+                <p class="experience-description">
+                    Spotted Zebra is a skills-based hiring and talent management platform.
+                    Add your role description, key achievements, and impact here.
+                </p>
+                <ul class="experience-highlights">
+                    <li>Key achievement or responsibility</li>
+                    <li>Another key achievement</li>
+                    <li>Measurable impact you delivered</li>
+                </ul>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="experience-card" id="project4">
+                <div class="company-header">
+                    <div class="logo-placeholder">4</div>
+                    <div class="company-info">
+                        <h3>Future Project</h3>
+                        <span class="company-type">Add your next role</span>
+                    </div>
+                </div>
+                <p class="experience-description">
+                    Description of another project or role you want to highlight.
+                </p>
+                <ul class="experience-highlights">
+                    <li>Key achievement or responsibility</li>
+                    <li>Another key achievement</li>
+                </ul>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="experience-card" id="project5">
+                <div class="company-header">
+                    <div class="logo-placeholder">5</div>
+                    <div class="company-info">
+                        <h3>Side Project</h3>
+                        <span class="company-type">Personal or freelance work</span>
+                    </div>
+                </div>
+                <p class="experience-description">
+                    Description of a side project, freelance work, or personal initiative.
+                </p>
+                <ul class="experience-highlights">
+                    <li>Key achievement or responsibility</li>
+                    <li>Another key achievement</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section contact-section">
         <h2>Get In Touch</h2>
-        <p>I'd love to hear from you!</p>
+        <p class="section-subtitle">Interested in working together? Let's talk.</p>
         <div class="contact-links">
-            <a href="mailto:your@email.com">Email</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="mailto:your@email.com" class="contact-btn">
+                <span class="btn-icon">@</span>
+                Email Me
+            </a>
+            <a href="https://linkedin.com/in/norbisamu" target="_blank" class="contact-btn">
+                <span class="btn-icon">in</span>
+                LinkedIn
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Your Name. Built from scratch.</p>
+        <p>&copy; 2025 Norbi Samu</p>
     </footer>
 
     <script src="script.js"></script>
