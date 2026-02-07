@@ -27,16 +27,18 @@ async function fetchCompanies() {
 // ============================================
 
 function renderProfile(profile) {
-    // Update hero section
-    document.querySelector('.hero h1').textContent = profile.name;
-    document.querySelector('.hero-description').textContent = profile.tagline;
+    // Update hero
+    const heroH1 = document.querySelector('.hero h1');
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroH1) heroH1.textContent = profile.name;
+    if (heroDesc) heroDesc.textContent = profile.tagline;
 
     // Update nav brand
-    document.querySelector('.nav-brand').textContent = profile.name;
+    const navBrand = document.querySelector('.nav-brand');
+    if (navBrand) navBrand.textContent = profile.name;
 
     // Update about section
-    const aboutContent = document.querySelector('.about-content');
-    const aboutTexts = aboutContent.querySelectorAll('.about-text');
+    const aboutTexts = document.querySelectorAll('.about-text');
     profile.about.forEach((text, index) => {
         if (aboutTexts[index]) {
             aboutTexts[index].textContent = text;
@@ -45,124 +47,56 @@ function renderProfile(profile) {
 
     // Update profile image
     const imagePlaceholder = document.querySelector('.image-placeholder');
-    if (profile.photo) {
-        imagePlaceholder.innerHTML = `<img src="${profile.photo}" alt="${profile.name}" onerror="this.parentElement.innerHTML='<span>Your Photo</span>'">`;
+    if (imagePlaceholder && profile.photo) {
+        imagePlaceholder.innerHTML = `<img src="${profile.photo}" alt="${profile.name}" onerror="this.parentElement.innerHTML='<span>${profile.name.split(' ').map(n => n[0]).join('')}</span>'">`;
     }
 
-    // Update stats
-    const stats = document.querySelectorAll('.stat');
-    profile.stats.forEach((stat, index) => {
-        if (stats[index]) {
-            stats[index].querySelector('.stat-number').textContent = stat.value;
-            stats[index].querySelector('.stat-label').textContent = stat.label;
+    // Update contact links
+    const contactLinks = document.querySelectorAll('.contact-link');
+    contactLinks.forEach(link => {
+        if (link.href.includes('mailto')) {
+            link.href = `mailto:${profile.contact.email}`;
+        } else if (link.href.includes('linkedin')) {
+            link.href = profile.contact.linkedin;
         }
     });
-
-    // Update contact links
-    const emailLink = document.querySelector('.contact-links a[href^="mailto"]');
-    const linkedinLink = document.querySelector('.contact-links a[href*="linkedin"]');
-    if (emailLink) emailLink.href = `mailto:${profile.contact.email}`;
-    if (linkedinLink) linkedinLink.href = profile.contact.linkedin;
-
-    // Update footer
-    document.querySelector('footer p').innerHTML = `&copy; ${new Date().getFullYear()} ${profile.name}`;
 }
 
 function renderCompanies(companies) {
-    const tabsContainer = document.querySelector('.experience-tabs');
-    const contentContainer = document.querySelector('.experience-content');
+    const container = document.getElementById('companies-container');
+    if (!container) return;
 
-    // Clear existing content
-    tabsContainer.innerHTML = '';
-    contentContainer.innerHTML = '';
+    container.innerHTML = '';
 
-    companies.forEach((company, index) => {
-        // Create tab button
-        const tabBtn = document.createElement('button');
-        tabBtn.className = `tab-btn${index === 0 ? ' active' : ''}`;
-        tabBtn.setAttribute('data-tab', company.id);
-        tabBtn.textContent = company.name;
-        tabsContainer.appendChild(tabBtn);
+    // Only show companies with logos
+    const companiesWithLogos = companies.filter(c => c.logo);
 
-        // Create experience card
-        const card = document.createElement('div');
-        card.className = `experience-card${index === 0 ? ' active' : ''}`;
-        card.id = company.id;
+    companiesWithLogos.forEach(company => {
+        const item = document.createElement('a');
+        item.className = 'company-item';
+        item.href = company.website || '#';
+        item.target = company.website ? '_blank' : '_self';
+        item.rel = 'noopener noreferrer';
 
-        const logoImg = company.logo
-            ? `<img src="${company.logo}" alt="${company.name} Logo" class="company-logo" onerror="this.outerHTML='<div class=\\'logo-placeholder\\'>${company.name.charAt(0)}</div>'">`
-            : `<div class="logo-placeholder">${company.name.charAt(0)}</div>`;
-
-        const logoHtml = company.website
-            ? `<a href="${company.website}" target="_blank" rel="noopener noreferrer" class="company-logo-link">${logoImg}</a>`
-            : logoImg;
-
-        card.innerHTML = `
-            <div class="company-header">
-                ${logoHtml}
-                <div class="company-info">
-                    <h3>${company.website ? `<a href="${company.website}" target="_blank" rel="noopener noreferrer">${company.name}</a>` : company.name}</h3>
-                    <span class="company-type">${company.type}</span>
-                </div>
-            </div>
-            <p class="experience-description">${company.description}</p>
-            <ul class="experience-highlights">
-                ${company.highlights.map(h => `<li>${h}</li>`).join('')}
-            </ul>
+        item.innerHTML = `
+            <img src="${company.logo}" alt="${company.name}" class="company-logo" onerror="this.style.display='none'">
+            <span class="company-name">${company.type}</span>
         `;
 
-        contentContainer.appendChild(card);
-    });
-
-    // Re-attach tab click handlers
-    attachTabHandlers();
-}
-
-// ============================================
-// UI INTERACTIONS
-// ============================================
-
-function attachTabHandlers() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const experienceCards = document.querySelectorAll('.experience-card');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            experienceCards.forEach(card => card.classList.remove('active'));
-
-            button.classList.add('active');
-            const tabId = button.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
-        });
+        container.appendChild(item);
     });
 }
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-    } else {
-        navbar.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
-    }
-});
 
 // ============================================
 // INITIALIZE
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Set year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Fetch data
     fetchProfile();
     fetchCompanies();
 });
