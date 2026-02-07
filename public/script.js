@@ -88,6 +88,21 @@ function renderCompanies(companies) {
 }
 
 // ============================================
+// PROJECT ACCORDION
+// ============================================
+
+function initProjectAccordion() {
+    const projectRows = document.querySelectorAll('.project-row');
+
+    projectRows.forEach(row => {
+        row.addEventListener('click', () => {
+            const projectItem = row.parentElement;
+            projectItem.classList.toggle('open');
+        });
+    });
+}
+
+// ============================================
 // SCROLL ANIMATIONS
 // ============================================
 
@@ -127,4 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize scroll animations
     initScrollAnimations();
+
+    // Initialize project accordion
+    initProjectAccordion();
 });
