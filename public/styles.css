@@ -12,6 +12,21 @@ html {
     scroll-behavior: smooth;
 }
 
+html::before {
+    content: '';
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #f0e0d0 0%, #e5d8c8 100%);
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    top: 50%;
+    right: 10%;
+    z-index: -1;
+    pointer-events: none;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
@@ -19,6 +34,36 @@ body {
     color: #3d3d3d;
     background: #f5f0e8;
     -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background blobs */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::before {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #e8d5c4 0%, #f0e6d8 100%);
+    top: -200px;
+    right: -200px;
+}
+
+body::after {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #d4e0e8 0%, #e8e0d5 100%);
+    bottom: 20%;
+    left: -150px;
 }
 
 ::selection {
