@@ -16,8 +16,8 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
     line-height: 1.7;
-    color: #e8e8e8;
-    background: #0a0a0a;
+    color: #d4d4d4;
+    background: #1a1a1a;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -80,7 +80,7 @@ a {
     width: 100%;
     top: 0;
     z-index: 100;
-    background: linear-gradient(to bottom, #0a0a0a 0%, transparent 100%);
+    background: linear-gradient(to bottom, #1a1a1a 0%, transparent 100%);
 }
 
 .nav-brand {
@@ -99,7 +99,7 @@ a {
 
 .nav-links a {
     font-size: 0.875rem;
-    color: #888;
+    color: #999;
     transition: color 0.3s ease;
 }
 
@@ -135,7 +135,7 @@ a {
 
 .hero-description {
     font-size: clamp(1.1rem, 2vw, 1.35rem);
-    color: #888;
+    color: #999;
     max-width: 600px;
     line-height: 1.8;
 }
@@ -155,14 +155,14 @@ a {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    background: linear-gradient(135deg, #252525 0%, #333 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'DM Sans', sans-serif;
     font-size: 3rem;
     font-weight: 500;
-    color: #444;
+    color: #666;
 }
 
 .image-placeholder img {
@@ -174,7 +174,7 @@ a {
 
 .about-text {
     font-size: 1.1rem;
-    color: #aaa;
+    color: #bbb;
     margin-bottom: 1.5rem;
     max-width: 600px;
 }
@@ -198,52 +198,57 @@ a {
 
 .section-intro {
     font-size: 1rem;
-    color: #666;
+    color: #888;
     margin-bottom: 4rem;
+    text-align: center;
+}
+
+.section h2 {
+    text-align: center;
 }
 
 .companies-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 4rem;
+    gap: 5rem;
+    justify-content: center;
     align-items: center;
 }
 
 .company-item {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    transition: opacity 0.3s ease;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
 .company-item:hover {
-    opacity: 0.7;
+    transform: scale(1.05);
 }
 
 .company-logo {
-    height: 40px;
+    height: 70px;
     width: auto;
-    max-width: 140px;
+    max-width: 180px;
     object-fit: contain;
-    filter: grayscale(100%) brightness(2);
-    opacity: 0.7;
+    filter: brightness(0) invert(0.7);
     transition: all 0.3s ease;
 }
 
 .company-item:hover .company-logo {
-    filter: grayscale(0%) brightness(1);
-    opacity: 1;
+    filter: brightness(0) invert(1);
 }
 
 .company-name {
-    font-size: 0.8rem;
-    color: #555;
+    font-size: 0.85rem;
+    color: #777;
     font-weight: 400;
+    text-align: center;
 }
 
 .company-item:hover .company-name {
-    color: #888;
+    color: #aaa;
 }
 
 @media (max-width: 600px) {
@@ -252,8 +257,55 @@ a {
     }
 
     .company-logo {
-        height: 32px;
+        height: 50px;
     }
+}
+
+/* ============================================
+   PROJECTS
+   ============================================ */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: #242424;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    background: #2a2a2a;
+}
+
+.project-card h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: #999;
+    line-height: 1.7;
+}
+
+.project-placeholder {
+    background: #222;
+    border: 2px dashed #333;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #555;
+    font-size: 0.95rem;
 }
 
 /* ============================================
@@ -264,11 +316,12 @@ a {
     display: flex;
     gap: 2rem;
     margin-top: 2rem;
+    justify-content: center;
 }
 
 .contact-link {
     font-size: 1rem;
-    color: #888;
+    color: #999;
     padding-bottom: 0.25rem;
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
@@ -290,7 +343,7 @@ footer {
 
 footer p {
     font-size: 0.85rem;
-    color: #444;
+    color: #555;
 }
 
 /* ============================================
@@ -302,7 +355,7 @@ footer p {
     display: block;
     width: 100%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
     margin-bottom: 8rem;
 }
 
