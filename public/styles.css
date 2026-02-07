@@ -232,12 +232,11 @@ a {
     width: auto;
     max-width: 180px;
     object-fit: contain;
-    filter: brightness(0) invert(0.7);
     transition: all 0.3s ease;
 }
 
 .company-item:hover .company-logo {
-    filter: brightness(0) invert(1);
+    opacity: 0.8;
 }
 
 .company-name {

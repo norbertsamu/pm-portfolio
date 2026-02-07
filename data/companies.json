@@ -1,16 +1,21 @@
 [
     {
+        "id": "spottedzebra",
+        "name": "Spotted Zebra",
+        "type": "Skills Assessment Platform",
+        "logo": "/images/logos/spottedzebra.png",
+        "website": "https://spottedzebra.co.uk",
+        "description": "Spotted Zebra is a skills-based hiring and talent management platform.",
+        "highlights": []
+    },
+    {
         "id": "beamery",
         "name": "Beamery",
         "type": "Talent Lifecycle Management",
         "logo": "/images/logos/beamery.png",
         "website": "https://beamery.com",
-        "description": "Beamery is a talent lifecycle management platform that helps enterprises attract, engage, and retain top talent. Add your role description, key achievements, and impact here.",
-        "highlights": [
-            "Key achievement or responsibility",
-            "Another key achievement",
-            "Measurable impact you delivered"
-        ]
+        "description": "Beamery is a talent lifecycle management platform that helps enterprises attract, engage, and retain top talent.",
+        "highlights": []
     },
     {
         "id": "fixflo",
@@ -18,48 +23,16 @@
         "type": "Property Management Software",
         "logo": "/images/logos/fixflo.png",
         "website": "https://fixflo.com",
-        "description": "Fixflo is a repairs and maintenance management platform for property managers. Add your role description, key achievements, and impact here.",
-        "highlights": [
-            "Key achievement or responsibility",
-            "Another key achievement",
-            "Measurable impact you delivered"
-        ]
+        "description": "Fixflo is a repairs and maintenance management platform for property managers.",
+        "highlights": []
     },
     {
-        "id": "spottedzebra",
-        "name": "Spotted Zebra",
-        "type": "Skills Assessment Platform",
-        "logo": "/images/logos/spottedzebra.png",
-        "website": "https://spottedzebra.co.uk",
-        "description": "Spotted Zebra is a skills-based hiring and talent management platform. Add your role description, key achievements, and impact here.",
-        "highlights": [
-            "Key achievement or responsibility",
-            "Another key achievement",
-            "Measurable impact you delivered"
-        ]
-    },
-    {
-        "id": "project4",
-        "name": "Future Project",
-        "type": "Add your next role",
-        "logo": null,
-        "website": null,
-        "description": "Description of another project or role you want to highlight.",
-        "highlights": [
-            "Key achievement or responsibility",
-            "Another key achievement"
-        ]
-    },
-    {
-        "id": "project5",
-        "name": "Side Project",
-        "type": "Personal or freelance work",
-        "logo": null,
-        "website": null,
-        "description": "Description of a side project, freelance work, or personal initiative.",
-        "highlights": [
-            "Key achievement or responsibility",
-            "Another key achievement"
-        ]
+        "id": "chambers",
+        "name": "Chambers and Partners",
+        "type": "Legal Rankings & Research",
+        "logo": "/images/logos/chambers.png",
+        "website": "https://chambers.com",
+        "description": "Chambers and Partners is a leading legal rankings and research company.",
+        "highlights": []
     }
 ]
