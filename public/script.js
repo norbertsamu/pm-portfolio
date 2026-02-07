@@ -88,6 +88,31 @@ function renderCompanies(companies) {
 }
 
 // ============================================
+// SCROLL ANIMATIONS
+// ============================================
+
+function initScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+    animatedElements.forEach(el => observer.observe(el));
+}
+
+// ============================================
 // INITIALIZE
 // ============================================
 
@@ -99,4 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch data
     fetchProfile();
     fetchCompanies();
+
+    // Initialize scroll animations
+    initScrollAnimations();
 });
