@@ -300,6 +300,12 @@ a {
     line-height: 1.7;
 }
 
+.project-type {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
 .project-placeholder {
     background: #ebe5dc;
     border: 2px dashed #c9c0b3;
