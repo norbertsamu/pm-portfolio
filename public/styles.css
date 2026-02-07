@@ -152,6 +152,20 @@ a {
     color: #2a2a2a;
 }
 
+.nav-email {
+    background: #2a2a2a;
+    color: #f5f0e8 !important;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-email:hover {
+    background: #444;
+    color: #f5f0e8 !important;
+    transform: translateY(-2px);
+}
+
 @media (max-width: 600px) {
     .nav-links {
         gap: 1.5rem;
@@ -371,15 +385,17 @@ a {
 .project-logos {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
+    flex-shrink: 0;
 }
 
 .project-logo {
-    height: 24px;
+    height: 32px;
     width: auto;
-    max-width: 80px;
+    max-width: 100px;
     object-fit: contain;
-    opacity: 0.7;
+    opacity: 0.6;
+    flex-shrink: 0;
 }
 
 .project-content {
@@ -425,27 +441,58 @@ a {
 }
 
 /* ============================================
-   CONTACT
+   OUTSIDE THE OFFICE
    ============================================ */
 
-.contact-links {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-    justify-content: center;
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
 }
 
-.contact-link {
-    font-size: 1rem;
-    color: #777;
-    padding-bottom: 0.25rem;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s ease;
+.hobby-placeholder {
+    background: #ebe5dc;
+    border: 2px dashed #c9c0b3;
+    border-radius: 12px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #999;
+    font-size: 0.95rem;
 }
 
-.contact-link:hover {
+.hobby-card {
+    background: #ebe5dc;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-4px);
+}
+
+.hobby-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hobby-card-content {
+    padding: 1.5rem;
+}
+
+.hobby-card h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: #2a2a2a;
-    border-bottom-color: #2a2a2a;
+    margin-bottom: 0.5rem;
+}
+
+.hobby-card p {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 /* ============================================
