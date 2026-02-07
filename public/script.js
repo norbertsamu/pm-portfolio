@@ -89,15 +89,19 @@ function renderCompanies(companies) {
         card.className = `experience-card${index === 0 ? ' active' : ''}`;
         card.id = company.id;
 
-        const logoHtml = company.logo
+        const logoImg = company.logo
             ? `<img src="${company.logo}" alt="${company.name} Logo" class="company-logo" onerror="this.outerHTML='<div class=\\'logo-placeholder\\'>${company.name.charAt(0)}</div>'">`
             : `<div class="logo-placeholder">${company.name.charAt(0)}</div>`;
+
+        const logoHtml = company.website
+            ? `<a href="${company.website}" target="_blank" rel="noopener noreferrer" class="company-logo-link">${logoImg}</a>`
+            : logoImg;
 
         card.innerHTML = `
             <div class="company-header">
                 ${logoHtml}
                 <div class="company-info">
-                    <h3>${company.name}</h3>
+                    <h3>${company.website ? `<a href="${company.website}" target="_blank" rel="noopener noreferrer">${company.name}</a>` : company.name}</h3>
                     <span class="company-type">${company.type}</span>
                 </div>
             </div>

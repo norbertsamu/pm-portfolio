@@ -295,6 +295,26 @@ body {
     margin-bottom: 0.25rem;
 }
 
+.company-info h3 a {
+    color: #1a1a2e;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.company-info h3 a:hover {
+    color: #3b82f6;
+}
+
+.company-logo-link {
+    display: block;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.company-logo-link:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
 .company-type {
     font-size: 0.9rem;
     color: #64748b;
