@@ -1,453 +1,313 @@
-/* Reset and base styles */
+/* ============================================
+   BASE & RESET
+   ============================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: #1a1a2e;
-    background: #fafafa;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Navigation */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #e8e8e8;
+    background: #0a0a0a;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.section {
+    padding: 8rem 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 5rem 6%;
+    }
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem 8%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 2rem 8%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
+    background: linear-gradient(to bottom, #0a0a0a 0%, transparent 100%);
 }
 
 .nav-brand {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #1a1a2e;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #fff;
     letter-spacing: -0.02em;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 3rem;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #64748b;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.2s;
+    font-size: 0.875rem;
+    color: #888;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #1a1a2e;
+    color: #fff;
 }
 
-/* Hero Section */
+@media (max-width: 600px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 0 8%;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: white;
 }
 
 .hero-content {
-    max-width: 700px;
-}
-
-.hero-subtitle {
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #94a3b8;
-    margin-bottom: 1rem;
+    max-width: 900px;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.1;
+    color: #fff;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
 }
 
 .hero-description {
-    font-size: 1.25rem;
-    color: #cbd5e1;
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    color: #888;
+    max-width: 600px;
+    line-height: 1.8;
 }
 
-.hero-cta {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: white;
-    color: #1a1a2e;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border-radius: 6px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.hero-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-/* Sections */
-.section {
-    padding: 6rem 8%;
-}
-
-.section h2 {
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    text-align: center;
-    letter-spacing: -0.02em;
-    color: #1a1a2e;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #64748b;
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-}
-
-/* About Section */
-.about-section {
-    background: white;
-}
+/* ============================================
+   ABOUT
+   ============================================ */
 
 .about-container {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 4rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    grid-template-columns: 200px 1fr;
+    gap: 6rem;
     align-items: start;
 }
 
-.about-image {
-    position: sticky;
-    top: 100px;
-}
-
 .image-placeholder {
-    width: 100%;
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-    border-radius: 12px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #64748b;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3rem;
     font-weight: 500;
-    font-size: 0.9rem;
+    color: #444;
 }
 
 .image-placeholder img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
-}
-
-.about-content h2 {
-    text-align: left;
-    margin-bottom: 1.5rem;
-}
-
-.about-text {
-    color: #475569;
-    font-size: 1.05rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.8;
-}
-
-.about-stats {
-    display: flex;
-    gap: 3rem;
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid #e2e8f0;
-}
-
-.stat {
-    display: flex;
-    flex-direction: column;
-}
-
-.stat-number {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1a1a2e;
-}
-
-.stat-label {
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-top: 0.25rem;
-}
-
-/* Experience Section */
-.experience-section {
-    background: #fafafa;
-}
-
-.experience-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-}
-
-.tab-btn {
-    padding: 0.75rem 1.5rem;
-    border: 1px solid #e2e8f0;
-    background: white;
-    color: #64748b;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: all 0.2s;
-    font-family: inherit;
-}
-
-.tab-btn:hover {
-    border-color: #cbd5e1;
-    color: #1a1a2e;
-}
-
-.tab-btn.active {
-    background: #1a1a2e;
-    color: white;
-    border-color: #1a1a2e;
-}
-
-.experience-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.experience-card {
-    display: none;
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-}
-
-.experience-card.active {
-    display: block;
-}
-
-.company-header {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 1.5rem;
-}
-
-.company-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    object-fit: contain;
-    background: #f8fafc;
-    padding: 8px;
-}
-
-.logo-placeholder {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: #64748b;
-}
-
-.company-info h3 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #1a1a2e;
-    margin-bottom: 0.25rem;
-}
-
-.company-info h3 a {
-    color: #1a1a2e;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.company-info h3 a:hover {
-    color: #3b82f6;
-}
-
-.company-logo-link {
-    display: block;
-    transition: transform 0.2s, opacity 0.2s;
-}
-
-.company-logo-link:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
-.company-type {
-    font-size: 0.9rem;
-    color: #64748b;
-}
-
-.experience-description {
-    color: #475569;
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-}
-
-.experience-highlights {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.experience-highlights li {
-    padding-left: 1.5rem;
-    position: relative;
-    color: #475569;
-    font-size: 0.95rem;
-}
-
-.experience-highlights li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.6em;
-    width: 6px;
-    height: 6px;
-    background: #1a1a2e;
     border-radius: 50%;
 }
 
-/* Contact Section */
-.contact-section {
-    background: white;
-    text-align: center;
+.about-text {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
 }
 
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.contact-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    background: #1a1a2e;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    border-radius: 6px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.contact-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(26, 26, 46, 0.2);
-}
-
-.btn-icon {
-    font-weight: 700;
-    font-size: 0.85rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: #1a1a2e;
-    color: #94a3b8;
-    font-size: 0.9rem;
-}
-
-/* Responsive */
 @media (max-width: 900px) {
     .about-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
 
-    .about-image {
-        position: static;
-        max-width: 250px;
-        margin: 0 auto;
-    }
-
-    .about-content h2 {
-        text-align: center;
-    }
-
-    .about-stats {
-        justify-content: center;
+    .image-placeholder {
+        width: 150px;
+        height: 150px;
+        font-size: 2.5rem;
     }
 }
 
+/* ============================================
+   EXPERIENCE
+   ============================================ */
+
+.section-intro {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.companies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+}
+
+.company-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.company-item:hover {
+    opacity: 0.7;
+}
+
+.company-logo {
+    height: 40px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(2);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.company-item:hover .company-logo {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+}
+
+.company-name {
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 400;
+}
+
+.company-item:hover .company-name {
+    color: #888;
+}
+
+@media (max-width: 600px) {
+    .companies-grid {
+        gap: 3rem;
+    }
+
+    .company-logo {
+        height: 32px;
+    }
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+
+.contact-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-link {
+    font-size: 1rem;
+    color: #888;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    padding: 4rem 8%;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: #444;
+}
+
+/* ============================================
+   DIVIDER LINE
+   ============================================ */
+
+.section + .section::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: 8rem;
+}
+
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-description {
-        font-size: 1.1rem;
-    }
-
-    .nav-links {
-        gap: 1.5rem;
-    }
-
-    .section {
-        padding: 4rem 5%;
-    }
-
-    .experience-tabs {
-        gap: 0.5rem;
-    }
-
-    .tab-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
-    }
-
-    .contact-links {
-        flex-direction: column;
-        align-items: center;
+    .section + .section::before {
+        margin-bottom: 5rem;
     }
 }
