@@ -1,4 +1,5 @@
 {
+    "alias": ["norbisamu.vercel.app"],
     "buildCommand": "",
     "outputDirectory": "public",
     "rewrites": [
