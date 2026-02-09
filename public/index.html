@@ -13,6 +13,11 @@
     <!-- Navigation -->
     <nav class="navbar">
         <a href="#" class="nav-brand">Norbi Samu</a>
+        <button class="nav-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -24,8 +29,14 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Norbi Samu</h1>
+            <h1 class="hero-title">
+                <span class="hero-line"><span class="hero-word">Norbi</span> <span class="hero-word">Samu</span></span>
+            </h1>
             <p class="hero-description">Product Manager crafting thoughtful digital experiences in B2B SaaS, HR Tech, and PropTech.</p>
+            <div class="hero-scroll-hint">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
         </div>
     </section>
 
@@ -182,7 +193,15 @@
 
     <!-- Footer -->
     <footer>
-        <p>Norbi Samu · <span id="year"></span></p>
+        <div class="footer-cta fade-in">
+            <h2>Let's build something together</h2>
+            <p class="footer-sub">Always open to interesting conversations and new opportunities.</p>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/norbisamu" target="_blank" rel="noopener noreferrer" class="footer-btn">Connect on LinkedIn</a>
+                <a href="mailto:norbert.samu96@gmail.com" class="footer-btn footer-btn-secondary">Send an email</a>
+            </div>
+        </div>
+        <p class="footer-copy">Norbi Samu · <span id="year"></span></p>
     </footer>
 
     <script src="script.js"></script>

@@ -128,6 +128,29 @@ function initScrollAnimations() {
 }
 
 // ============================================
+// MOBILE NAV
+// ============================================
+
+function initMobileNav() {
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (!toggle || !navLinks) return;
+
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            toggle.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+    });
+}
+
+// ============================================
 // INITIALIZE
 // ============================================
 
@@ -145,4 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize project accordion
     initProjectAccordion();
+
+    // Initialize mobile nav
+    initMobileNav();
 });
