@@ -27,39 +27,8 @@ async function fetchCompanies() {
 // ============================================
 
 function renderProfile(profile) {
-    // Update hero
-    const heroH1 = document.querySelector('.hero h1');
-    const heroDesc = document.querySelector('.hero-description');
-    if (heroH1) heroH1.textContent = profile.name;
-    if (heroDesc) heroDesc.textContent = profile.tagline;
-
-    // Update nav brand
-    const navBrand = document.querySelector('.nav-brand');
-    if (navBrand) navBrand.textContent = profile.name;
-
-    // Update about section
-    const aboutTexts = document.querySelectorAll('.about-text');
-    profile.about.forEach((text, index) => {
-        if (aboutTexts[index]) {
-            aboutTexts[index].textContent = text;
-        }
-    });
-
-    // Update profile image
-    const imagePlaceholder = document.querySelector('.image-placeholder');
-    if (imagePlaceholder && profile.photo) {
-        imagePlaceholder.innerHTML = `<img src="${profile.photo}" alt="${profile.name}" onerror="this.parentElement.innerHTML='<span>${profile.name.split(' ').map(n => n[0]).join('')}</span>'">`;
-    }
-
-    // Update contact links
-    const contactLinks = document.querySelectorAll('.contact-link');
-    contactLinks.forEach(link => {
-        if (link.href.includes('mailto')) {
-            link.href = `mailto:${profile.contact.email}`;
-        } else if (link.href.includes('linkedin')) {
-            link.href = profile.contact.linkedin;
-        }
-    });
+    // Profile data is now hardcoded in HTML for faster rendering.
+    // This function is kept for any dynamic overrides if needed.
 }
 
 function renderCompanies(companies) {
