@@ -12,27 +12,6 @@ html {
     scroll-behavior: smooth;
 }
 
-html::before {
-    content: '';
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #e8d0b8 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.6;
-    top: 10%;
-    right: 5%;
-    z-index: -1;
-    pointer-events: none;
-    animation: blobDrift1 20s ease-in-out infinite;
-}
-
-@keyframes blobDrift1 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(-30px, 40px) scale(1.05); }
-    66% { transform: translate(20px, -20px) scale(0.95); }
-}
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -45,61 +24,106 @@ body {
     overflow-x: hidden;
 }
 
-/* Background blobs */
-body::before,
-body::after {
-    content: '';
+/* Mesh gradient background */
+.mesh-bg {
     position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.mesh-blob {
+    position: absolute;
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.5;
-    z-index: -1;
-    pointer-events: none;
 }
 
-body::before {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, #dcc8b0 0%, transparent 70%);
-    top: -100px;
-    right: -150px;
-    animation: blobDrift2 25s ease-in-out infinite;
+.mesh-blob:nth-child(1) {
+    width: 50vw;
+    height: 50vw;
+    max-width: 600px;
+    max-height: 600px;
+    background: #e0c4a8;
+    top: -10%;
+    right: -5%;
+    animation: mesh1 18s ease-in-out infinite;
 }
 
-body::after {
-    width: 550px;
-    height: 550px;
-    background: radial-gradient(circle, #c8d4dd 0%, transparent 70%);
-    bottom: 15%;
-    left: -100px;
-    animation: blobDrift3 22s ease-in-out infinite;
+.mesh-blob:nth-child(2) {
+    width: 40vw;
+    height: 40vw;
+    max-width: 500px;
+    max-height: 500px;
+    background: #c9b8a8;
+    bottom: -5%;
+    left: 10%;
+    animation: mesh2 22s ease-in-out infinite;
 }
 
-@keyframes blobDrift2 {
+.mesh-blob:nth-child(3) {
+    width: 35vw;
+    height: 35vw;
+    max-width: 450px;
+    max-height: 450px;
+    background: #bfcfca;
+    top: 30%;
+    right: 25%;
+    animation: mesh3 20s ease-in-out infinite;
+}
+
+.mesh-blob:nth-child(4) {
+    width: 30vw;
+    height: 30vw;
+    max-width: 400px;
+    max-height: 400px;
+    background: #d4bfa8;
+    top: 60%;
+    right: 60%;
+    animation: mesh4 24s ease-in-out infinite;
+}
+
+.mesh-blob:nth-child(5) {
+    width: 25vw;
+    height: 25vw;
+    max-width: 350px;
+    max-height: 350px;
+    background: #c4c8bf;
+    top: 5%;
+    left: 30%;
+    animation: mesh5 19s ease-in-out infinite;
+}
+
+@keyframes mesh1 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(40px, 30px) scale(1.08); }
+    25% { transform: translate(-60px, 40px) scale(1.1); }
+    50% { transform: translate(-20px, 80px) scale(0.95); }
+    75% { transform: translate(30px, 20px) scale(1.05); }
 }
 
-@keyframes blobDrift3 {
+@keyframes mesh2 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-30px, -40px) scale(1.06); }
+    25% { transform: translate(50px, -30px) scale(1.08); }
+    50% { transform: translate(80px, -60px) scale(0.92); }
+    75% { transform: translate(20px, -20px) scale(1.04); }
 }
 
-/* Subtle noise texture overlay */
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 200px;
-    pointer-events: none;
-    z-index: 0;
+@keyframes mesh3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-40px, 50px) scale(1.12); }
+    66% { transform: translate(30px, -30px) scale(0.9); }
 }
 
-.hero > * {
-    position: relative;
-    z-index: 1;
+@keyframes mesh4 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(60px, -40px) scale(1.06); }
+    66% { transform: translate(-30px, 30px) scale(0.96); }
+}
+
+@keyframes mesh5 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, 40px) scale(1.1); }
 }
 
 ::selection {
@@ -850,6 +874,47 @@ a {
 @media (max-width: 600px) {
     .hobbies-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.hobby-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    max-width: 900px;
+    margin: 2rem auto 0;
+}
+
+.hobby-photo-slot {
+    aspect-ratio: 4 / 3;
+    background: rgba(0, 0, 0, 0.03);
+    border: 2px dashed rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease;
+}
+
+.hobby-photo-slot:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.hobby-photo-slot span {
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+.hobby-photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .hobby-photos {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
