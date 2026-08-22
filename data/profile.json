@@ -1,19 +1,19 @@
 {
     "name": "Norbi Samu",
-    "title": "Product Manager",
+    "title": "Senior Product Manager",
     "photo": "/images/profile/me.png",
-    "tagline": "Building products that solve real problems. Experienced in B2B SaaS, HR Tech, and PropTech.",
+    "tagline": "Taking 0-1 B2B SaaS products from discovery to Enterprise scale. AI-native product development, ATS & HR tech integrations.",
     "about": [
-        "I'm a Product Manager with experience across HR Tech, PropTech, and talent management platforms. I've worked with companies ranging from early-stage startups to scale-ups, helping them define product strategy, ship features that users love, and drive measurable business outcomes.",
-        "My approach combines deep user empathy with data-driven decision making. I believe great products come from truly understanding customer problems before jumping to solutions."
+        "I'm a Senior Product Manager with 5 years of experience taking 0-1 B2B SaaS products from discovery to Enterprise scale. My strengths are AI-native product development, complex ATS / HR tech integrations, and turning customer and usage data into commercial results.",
+        "I'm hands-on and outcome-focused, with a bias for digging into the detail — and an early adopter of AI tooling and workflows across product and design teams."
     ],
     "stats": [
-        { "value": "3+", "label": "Companies" },
-        { "value": "B2B", "label": "Focus" },
-        { "value": "SaaS", "label": "Expertise" }
+        { "value": "5", "label": "Years in Product" },
+        { "value": "8", "label": "ATS Integrations" },
+        { "value": "0→1", "label": "Specialty" }
     ],
     "contact": {
-        "email": "your@email.com",
+        "email": "norbert.samu96@gmail.com",
         "linkedin": "https://linkedin.com/in/norbisamu"
     }
 }

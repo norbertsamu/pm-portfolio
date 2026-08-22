@@ -48,10 +48,9 @@ https://norbisamu.vercel.app
 - LinkedIn: linkedin.com/in/norbisamu
 
 ## Pending/Future Work
-- Fill in placeholder content in Products & Projects
-- Add content to "Outside the office" section (hobbies, images)
+- Add photos to "Outside the office" section
 - Potentially upgrade Beamery logo to SVG
-- Fill in Impact sections for each project
+- Write full case studies (case-study links are still placeholder "#")
 
 ## Commands
 ```bash
